@@ -1,23 +1,7 @@
 steps:
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$df-pipeline-project-19062024/my-web-app', '.']
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$df-pipeline-project-19062024/my-web-app']
-  - name: 'gcr.io/cloud-builders/gke-deploy'
-    args: ['run', '--image', 'gcr.io/$df-pipeline-project-19062024/my-web-app', '--cluster', 'my-cluster', '--location', 'us-central1']
-images:
-  - 'gcr.io/$df-pipeline-project-19062024/my-web-app'
-
-# steps:
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA', '.']
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
-# - name: 'gcr.io/cloud-builders/kubectl'
-#   args: ['apply', '-f', 'kubernetes/deployment.yaml']
-#   env:
-#   - 'CLOUDSDK_COMPUTE_ZONE=$ZONE'
-#   - 'CLOUDSDK_CONTAINER_CLUSTER=$CLUSTER_NAME'
-# images:
-# - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
-
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud app deploy --quiet

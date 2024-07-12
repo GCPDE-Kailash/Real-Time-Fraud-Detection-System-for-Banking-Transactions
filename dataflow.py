@@ -44,7 +44,7 @@ def run():
      | 'FraudDetection' >> beam.ParDo(FraudDetection())
      # Write the processed transactions to BigQuery
      | 'WriteToBigQuery' >> WriteToBigQuery(
-            table='df-pipeline-project-19062024:banking_fraud.transactions_tbl2',
+            table='df-pipeline-project-19062024:banking_fraud.transactions_tbl3',
             schema='transaction_id:STRING, account_number:STRING, amount:FLOAT, timestamp:TIMESTAMP, fraud_flag:BOOLEAN',
             write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND,
             custom_gcs_temp_location='gs://folder-temp/temp'
