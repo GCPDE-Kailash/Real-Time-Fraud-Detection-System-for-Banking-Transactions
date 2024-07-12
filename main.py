@@ -24,7 +24,7 @@ def frauds():
     query = """
     SELECT * FROM `df-pipeline-project-19062024.banking_fraud.transactions_tbl`
     WHERE fraud_flag = TRUE
-    LIMIT 100
+    LIMIT 10
     """
     results = client.query(query)
     frauds = [dict(row) for row in results]
