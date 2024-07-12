@@ -2,8 +2,11 @@
 ---  python -m venv venv.
 ----  pip install -r requirements.txt
 ---   gcloud app deploy
+----- gcloud builds submit --config cloudbuild.yaml .
 
-----Project summery------
+
+-------------------------Project summery------------------------------------------------------
+----------------------------------------------------------------------------------------------
 In my recent project, I developed a real-time fraud detection system 
 for banking transactions on Google Cloud Platform. The system ingests streaming
  transaction data using Pub/Sub and processes it with Dataflow. 
