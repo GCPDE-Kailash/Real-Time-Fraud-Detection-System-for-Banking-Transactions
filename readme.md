@@ -17,8 +17,6 @@ for banking transactions on Google Cloud Platform. The system ingests streaming
 
 -----------------------
 
-
-
 ### Project Overview
 You will create a real-time fraud detection system for banking transactions on Google Cloud Platform. The system will ingest, process, store, analyze, and visualize streaming transaction data to detect and respond to potential fraudulent activities.
 
@@ -114,7 +112,7 @@ You will create a real-time fraud detection system for banking transactions on G
   - A final presentation summarizing the project, challenges faced, and solutions implemented.
 
 ### Example of a Fraud Detection Dataflow Pipeline
-```python
+<!-- ```python
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions, StandardOptions
 from apache_beam.io import ReadFromPubSub, WriteToBigQuery
@@ -173,7 +171,7 @@ def run():
 
 # Run the pipeline if this script is executed directly
 if __name__ == '__main__':
-    run()
+    run() -->
 
 ```
 
