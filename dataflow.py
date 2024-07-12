@@ -4,7 +4,7 @@ from apache_beam.io import ReadFromPubSub, WriteToBigQuery
 import json
 import os
 
-# Set the Google Cloud credentials
+# Set the Google Cloud credentials environment variable
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "df-pipeline-project-sa-authentication_key.json"
 
 # Create the PipelineOptions object and configure it
