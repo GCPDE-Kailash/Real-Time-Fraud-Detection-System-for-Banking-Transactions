@@ -1,0 +1,36 @@
+from google.cloud import pubsub_v1
+import json
+import time
+import random
+import os
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "df-pipeline-project-sa-authentication_key.json"
+# Initialize the Publisher
+
+publisher_path = 'projects/df-pipeline-project-19062024/topics/banking'
+publisher = pubsub_v1.PublisherClient()
+
+# Function to generate a random transaction
+def generate_transaction():
+    return {
+        "transaction_id": str(random.randint(100000, 999999)),
+        "account_number": str(random.randint(10000000, 99999999)),
+        "amount": round(random.uniform(10, 10000), 2),
+        "timestamp": time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    }
+
+# Function to publish messages to Pub/Sub
+def publish_messages():
+    while True:
+        transaction = generate_transaction()
+        message = json.dumps(transaction).encode('utf-8')
+        try:
+            future = publisher.publish(publisher_path, message)
+            message_id = future.result(timeout=10)  # Set a timeout for the result
+            print(f"Published {transaction} with message ID {message_id}")
+        except Exception as e:
+            print(f"Failed to publish and raise exception: {e}")
+        time.sleep(1)  # Simulate a delay between transactions   
+        
+if __name__ == "__main__":
+    publish_messages()

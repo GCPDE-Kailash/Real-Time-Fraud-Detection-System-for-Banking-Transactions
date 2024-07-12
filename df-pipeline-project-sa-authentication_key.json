@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "df-pipeline-project-19062024",
+  "private_key_id": "091387e0886a03cf17eb204e7a6ac2cfe2642342",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCx5S3YfvNAyChv\nVCn7u3iLXRQ7dc41F4WJ+qftYQ6xfDM3039nCiw/XNo3lCnfe6FZY5lt+3f38jWQ\nb2e6KBaQeTYQ4fwpMTs8w8H697x0l/uw1W8SgB+GKhlngovvjeGKUemuv4viwpaQ\n09y9qUQ4QuZPVC8AFzudwFRSfbdJL7EpeZyJDLRDAbgnwKy+DQ9d/A6Cm+lLcl0j\nW1V4qMIwUOY+QRsIvcQEmhc+FwSbzKGS9RWWWtlZ6vZZ0TIA66otGpxpoK4cHOod\noVeHLjSxnJlbI4+5WJ45sAmAgWIi4keuaUOQgSXALF3gtmL9pcTLlj9bkrDOU7xN\n+rP1sxpFAgMBAAECggEAKmFb27DayLsmjucxHUybOjBRipzVJGbXJHj3mqC9vGDH\nXuxe9LBCvFGllwoQM7KjTMVinwYCnaoxQpiX0IyOW5rU247K4RFeeGp2gxCT7/7p\nMkaWsISfffn3lWZPaiGV8rry/fOaIsqSziv68aAqpXCip5F5pP7j8AAK1qAmkyOH\n4aNPZeDBhil3NdacABSvTjDavC8/4aiKYE7k3B5c0h4D2Tk/89qun4uY9jL5P50K\nZlVUZo4fEWiMY4j3cPZU4+gGiH2Ql2R8mlRMGkuOkg6c0ZeDm+Ka5XK+rg2VFzlP\nON+JCyjLOsKNWLAol98pWakYccjZmiyZLVqwWfsdwQKBgQD0t8YnBMIm/mb6cUVp\nda4fphn1KFLokqCVXgT73UXLjx00CjOx8LUMLYMH3jQEpw25aEovB88CnEhFqXMB\nSj3GROYhflYQ/dC8gQ1VjlkAZvBtB2GZXpA+KN1Yf/I6EaQirpzGVg4LSLxFLH0j\nSPB6KtvqhXMAbtUnhl8EgomqcQKBgQC6GL8RNzmGi/ZsuZ2/XF0LYaJuqdurVHtW\nQnzx4cYEJiXwnwndsDeBlIQryw5P8gTnW2tJRCV29acOFSK0LsFWy0hlEgTDToTH\nfyXdXXbcR/bP/p8AYf5jo6kO8Qsxwst+A2j2laI8ufIvcS+ixgsbjl9tTVatQdzO\nfxrHuOOPFQKBgQDfy8jdGg7sVi+azUfrQAGzU9XdS7k2lBFjSA5Kv3r6w7CzTLkl\n+7m2n1B7O4xazONSMbvV8tAv1PiLLIHOJjUEQzIqYz0WYOgp2+Nz4LAoG/u32c45\n0i8biYeTTb8Zt9RhG0qoXz6Mt0HmCN+QCz5Qmy1u9gfL14/7i3kNyMtZIQKBgQCH\nliIXo/nYqr8XRkHFu8Da2v7izAUNllbqaTTpcsq4GSdJYkZo68v1MEUAN0itPLMP\n8Y6AahM10hMt8n4/c1VQLHoJkZBA0ENzqpLm7wL7yb7smiI0wDD9Xa9+AGdckQV8\nQXXHOwxiXEQ1Bq1jVhGfuSKT22ZMg5EiLn9PhsjdZQKBgQDeJ70E87u4sH84NJZo\nVbhmVTfcS38O4ls6IuAlZgYk0/yvHRcML3UyKMYmzqOiPIt5XOFmkGYEAl2drTHK\nSWgpLaOGn9jJ61cItBacSkGJ3caophio2hTXTM2pE23g29awcEGuqtvMKNS5MdTT\nIJMVT7h6U5UMXj9Qd6qk7t7ovg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dataflow-pipeline-sa@df-pipeline-project-19062024.iam.gserviceaccount.com",
+  "client_id": "101826734847743427414",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dataflow-pipeline-sa%40df-pipeline-project-19062024.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

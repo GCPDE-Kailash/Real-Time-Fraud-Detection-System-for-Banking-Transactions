@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frauds</title>
+    <link rel="stylesheet" href="static/main.css">
+</head>
+<body>
+    <h1>Frauds</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Account Number</th>
+            <th>Amount</th>
+            <th>Timestamp</th>
+            <th>Fraud Flag</th>
+        </tr>
+        {% for fraud in frauds %}
+        <tr>
+            <td>{{ fraud.transaction_id }}</td>
+            <td>{{ fraud.account_number }}</td>
+            <td>{{ fraud.amount }}</td>
+            <td>{{ fraud.timestamp }}</td>
+            <td>{{ fraud.fraud_flag }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

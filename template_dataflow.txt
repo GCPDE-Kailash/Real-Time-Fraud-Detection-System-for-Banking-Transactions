@@ -1,0 +1,36 @@
+import apache_beam as beam
+from apache_beam.options.pipeline_options import PipelineOptions, GoogleCloudOptions, StandardOptions
+
+class ProcessTransactions(beam.DoFn):
+    def process(self, element):
+        transaction = element
+        fraud_flag = 'fraud' if transaction['amount'] > 10000 else 'not fraud'
+        transaction['fraud_flag'] = fraud_flag
+        return [transaction]
+
+def run():
+    options = PipelineOptions()
+    google_cloud_options = options.view_as(GoogleCloudOptions)
+    google_cloud_options.project = 'df-pipeline-project-19062024'
+    google_cloud_options.job_name = 'pubsubdataflowtobq'
+    google_cloud_options.region='us-central1'
+    template_location='gs://bucket-for-dataflow_pipeline/usingTemplate/bq_template00'
+    google_cloud_options.staging_location = 'gs://bucket-for-dataflow_pipeline/stage'
+    google_cloud_options.temp_location = 'gs://bucket-for-dataflow_pipeline/temp'
+    options.view_as(StandardOptions).runner = 'DataflowRunner'
+
+    with beam.Pipeline(options=options) as p:
+        transactions = (
+            p | beam.io.ReadFromPubSub(subscription='projects/df-pipeline-project-19062024/subscriptions/banking-sub')
+              | beam.Map(lambda x: json.loads(x))
+              | beam.ParDo(ProcessTransactions())
+              | beam.io.WriteToBigQuery(
+                  table='df-pipeline-project-19062024:banking_fraud.transactions_tbl',
+                  schema='transaction_id:STRING, account_number:STRING, amount:FLOAT, timestamp:TIMESTAMP, fraud_flag:BOOLEAN',
+                  write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND,
+                  create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
+                  custom_gcs_temp_location='gs://bucket-for-dataflow_pipeline/temp')
+            )
+
+if __name__ == '__main__':
+    run()

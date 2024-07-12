@@ -1,0 +1,18 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:app --timeout 0
+runtime_config:
+  python_version: 3.6
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 2
+  disk_size_gb: 30
+service: transactions
+
+env_variables:
+  PROJECT_NAME: "df-pipeline-project-19062024"
+  FLASK_ENV: "production"
+  SECRET_KEY: "df-pipeline-project-sa-authentication_key.json"
